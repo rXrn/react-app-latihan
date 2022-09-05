@@ -1,12 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const name = "World";
+const hello = <h1>Hello World</h1>;
+const greet = <h1>Hello {name}</h1>;
+const greetHello = (name) => {
+  return <h1>Greeting, {name}. Welcome</h1>;
+};
 root.render(
   <React.StrictMode>
+    {hello}
+    {greet}
+    {greetHello("Ari")}
     <App />
   </React.StrictMode>
 );
