@@ -3,11 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./styles.css";
+
+const styles = {
+  color: "aqua",
+  textTransform: "uppercase",
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const name = "World";
-const hello = <h1>Hello World</h1>;
-const greet = <h1>Hello {name}</h1>;
+const hello = <h1 style={{ color: "red" }}>Hello World</h1>;
+const greet = <h1 style={styles}>Hello {name}</h1>;
 const greetHello = (name) => {
   return <h1>Greeting, {name}. Welcome</h1>;
 };
