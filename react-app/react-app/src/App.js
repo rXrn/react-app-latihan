@@ -9,11 +9,11 @@ export function App() {
     <Container fluid>
       <Header></Header>
       <Row>
-        <Col>
+        {/* <Col>
           <h1>Test</h1>
-        </Col>
+        </Col> */}
         <Col sm="6" md="4">
-          <Halo />
+          <Halo nama={"Ari"} />
         </Col>
         <GuestBookList></GuestBookList>
       </Row>

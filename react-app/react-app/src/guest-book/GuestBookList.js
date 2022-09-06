@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { GuestRow } from "./GuestRow";
 import Table from "react-bootstrap/Table";
 
 const contacts = [
@@ -81,36 +81,26 @@ export function GuestBookList() {
   return (
     <>
       <h2 className="text-center">Guest Book</h2>
-      <ul>
-        <Table striped bordered hover variant="dark">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Phone</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Options</th>
-            </tr>
-          </thead>
-          <tbody>
-            {contacts.map((val, key) => {
-              return (
-                <tr key={key}>
-                  <td>{val.id}</td>
-                  <td>{val.name}</td>
-                  <td>{val.phone}</td>
-                  <td>{val.email}</td>
-                  <td>{val.address}</td>
-                  <td>
-                    <Button onClick={() => sayHello(val)}>Daftar</Button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
-      </ul>
+
+      <Table striped bordered hover variant="dark">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <GuestRow
+            contact={contacts}
+            sayHello={sayHello}
+            array={["Ari", "Putra", "Nugraha"]}
+          />
+        </tbody>
+      </Table>
     </>
   );
 }
