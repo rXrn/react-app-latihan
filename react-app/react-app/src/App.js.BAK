@@ -1,0 +1,29 @@
+import { Halo } from "./assets/greetings/Halo";
+import { Footer } from "./layout/Footer.js";
+import { Header } from "./layout/Header.js";
+import { Container, Col, Row } from "react-bootstrap";
+import { GuestBookList } from "./guest-book/GuestBookList";
+import { Counter } from "./counter/Counter";
+import { GuestBook } from "./guest-book/GuestBook";
+
+export function App() {
+  return (
+    <Container fluid>
+      <Header></Header>
+      <Row>
+        <Col>
+          <Halo nama={"Ari"} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Counter />
+        </Col>
+      </Row>
+      <Row>
+        <GuestBook></GuestBook>
+      </Row>
+      <Footer></Footer>
+    </Container>
+  );
+}

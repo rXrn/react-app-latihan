@@ -13,7 +13,7 @@ export function Footer() {
             href="https://www.google.com"
             onClick={(e) => handleClick(e)}
           >
-            React Bootstrap
+            React Footer
           </Navbar.Brand>
         </Container>
       </Navbar>

@@ -1,23 +1,16 @@
-import { Halo } from "./assets/greetings/Halo";
-import { Footer } from "./layout/Footer.js";
-import { Header } from "./layout/Header.js";
+import { Footer } from "./components/layout/Footer.js";
+import { Header } from "./components/layout/Header.js";
 import { Container, Col, Row } from "react-bootstrap";
-import { GuestBookList } from "./guest-book/GuestBookList";
+import { CounterProvider } from "./context/counter-context";
+import { CounterWithContext } from "./components/counter-context/CounterContext.js";
+import { GuestBookContext } from "./context/GuestBookContext.js";
 
 export function App() {
   return (
     <Container fluid>
       <Header></Header>
-      <Row>
-        {/* <Col>
-          <h1>Test</h1>
-        </Col> */}
-        <Col sm="6" md="4">
-          <Halo nama={"Ari"} />
-        </Col>
-        <GuestBookList></GuestBookList>
-      </Row>
-      <Footer></Footer>
+      <GuestBookContext />
+      <Footer className="justify-content-center"></Footer>
     </Container>
   );
 }
