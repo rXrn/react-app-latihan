@@ -33,8 +33,17 @@ export class GuestProvider extends Component {
   }
 
   saveGuest(guests) {
-    // if (guest.id) guests.id = uniqid();
-    this.setState({ guests: [...this.state.guests, guests], page: "list" });
+    // if (guest?.id)
+    if (guests?.id) {
+      const temp = this.state.guests;
+      const formValueData = temp.findIndex((item) => item.id === guests.id);
+      console.log(formValueData);
+      temp.splice(formValueData, 1, guests);
+      this.setState({ guests: temp, index: null, page: "list" });
+    } else {
+      guests.id = uniqid();
+      this.setState({ guests: [...this.state.guests, guests], page: "list" });
+    }
   }
 
   deleteGuest(index) {
@@ -86,6 +95,6 @@ export function withGuestConsumer(mapToProps) {
         );
       }
     }
-    return GuestCustomer;
+    return GuestConsumer;
   };
 }

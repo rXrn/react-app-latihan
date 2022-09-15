@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { GuestFormContext } from "../components/guest-context-copy2/GuestFormContext.js.bak";
-import { GuestListContext } from "../components/guest-context-copy2/GuestListContext.js.bak";
+import { GuestFormContext } from "../components/guest-context/GuestFormContext.js";
+import { GuestListContext } from "../components/guest-context/GuestListContext.js";
 import { GuestProvider } from "./guest-context";
 
 export class GuestBookContext extends Component {
@@ -17,9 +17,9 @@ export class GuestBookContext extends Component {
     this.openList = this.openList.bind(this);
   }
 
-  openForm(data, index, isEdit) {
+  openForm(data, index) {
     console.log("data:", data);
-    this.setState({ page: "form", data: data, index: index, isEdit: isEdit });
+    this.setState({ page: "form", data: data, index: index });
   }
 
   openList() {
@@ -36,7 +36,9 @@ export class GuestBookContext extends Component {
         </Row>
         <Row>
           <GuestProvider>
-            <Button onClick={() => this.openForm()}>Add Guest</Button>
+            <Button onClick={() => this.openForm(this.state.data)}>
+              Add Guest
+            </Button>
             {this.state.page === "list" ? (
               <GuestListContext
                 openForm={this.openForm}

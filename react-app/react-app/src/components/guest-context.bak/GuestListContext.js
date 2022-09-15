@@ -26,10 +26,7 @@ export function GuestListContext({ guests, openForm, isEdit, deleteGuest }) {
                   <td>{value.email}</td>
                   <td>{value.address}</td>
                   <td>
-                    <Button
-                      className="mx-2"
-                      onClick={() => openForm(value, key, true)}
-                    >
+                    <Button className="mx-2" onClick={() => openForm(value)}>
                       Edit
                     </Button>
                     <GuestContext.Consumer>
